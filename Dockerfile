@@ -8,7 +8,7 @@ RUN tar -xzvf apache*.tar.gz
 RUN apt-get install openjdk-8-jdk -y
 RUN java -version
 RUN mv apache-tomcat-8.5.40/* /opt/tomcat/.
-COPY /var/lib/jenkins/workspace/docker-container/target/mahaLogin-2.0.war /opt/tomcat/webapps
+COPY /home/ubuntu/workspace/docker-container/target/mahaLogin-2.0.war /opt/tomcat/webapps
 WORKDIR /opt/tomcat/webapps
 EXPOSE 8080
 CMD ["/opt/tomcat/bin/catalina.sh","run"]
