@@ -9,6 +9,6 @@ RUN apt-get install openjdk-8-jdk -y
 RUN java -version
 RUN mv apache-tomcat-8.5.40/* /opt/tomcat/.
 WORKDIR /opt/tomcat/webapps
-COPY /var/lib/jenkins/workspace/docker-container/target/*.war /opt/tomcat/webapps
+COPY /var/lib/jenkins/workspace/docker-container/target/mahaLogin-*.war /opt/tomcat/webapps
 EXPOSE 8080
 CMD ["/opt/tomcat/bin/catalina.sh","run"]
